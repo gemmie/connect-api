@@ -1,14 +1,6 @@
-import express, { Express, Request, Response } from 'express';
-import dotenv from 'dotenv';
+import { mockBankApi } from './mock-bank-apis/mock-api';
+import { createApp } from './core/application/app';
 
-dotenv.config();
-
-const app: Express = express();
-const port = process.env.PORT || 4050;
-
-app.get('/', (req: Request, res: Response) => {
-    res.send('Express + TypeScript Server');
-});
-app.listen(port, () => {
-    console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
-});
+createApp()
+    .then(({ start }) => start())
+    .then(() => mockBankApi());
