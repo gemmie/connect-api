@@ -8,8 +8,9 @@
         "test": "test",
         "lint:check": "eslint --ext .ts .",
         "lint:fix": "eslint --fix --ext .ts .",
-        "prettier:check": "prettier --check './**/*.{ts,js,tsx,scss,json}'",
-        "prettier:fix": "prettier --write './**/*.{ts,js,tsx,scss,json}'"
+        "prettier:check": "prettier --check 'src/**/*.{ts,js,json}'",
+        "prettier:fix": "prettier --write 'src/**/*.{ts,js,json}'",
+        "prepare": "husky install"
     },
     "repository": {
         "type": "git",
@@ -36,6 +37,7 @@
         "@typescript-eslint/eslint-plugin": "^5.58.0",
         "@typescript-eslint/parser": "^5.58.0",
         "eslint": "^8.38.0",
+        "husky": "^8.0.3",
         "nock": "^13.3.0",
         "nodemon": "^2.0.22",
         "prettier": "^2.8.7",
