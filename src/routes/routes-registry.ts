@@ -8,6 +8,7 @@ import {
 import { transactionGetRoutes } from './transaction/get';
 import { Route } from './types';
 import { validationResult } from 'express-validator';
+import { errorHandler } from '../core/error/error-handler';
 
 export const registerRoutes = (app: Express) => {
     const transactionRoutes = [...transactionGetRoutes];
@@ -22,6 +23,8 @@ export const registerRoutes = (app: Express) => {
             withErrorHandling(callback)
         );
     });
+
+    app.use(errorHandler);
 };
 
 const validateRequest = (req: Request, res: Response, next: NextFunction) => {
