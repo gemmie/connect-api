@@ -2,8 +2,7 @@ import nock from 'nock';
 import revolutTransactions from './revolut-tx.json';
 import monzoTransactions from './monzo-tx.json';
 import sterlingTransactions from './sterling-tx.json';
-import {BankEndpoint} from "./types";
-
+import { BankEndpoint } from './types';
 
 const bankEndpoints: BankEndpoint[] = [
     { name: 'revolut', transactionsResponse: revolutTransactions },

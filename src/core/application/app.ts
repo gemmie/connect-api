@@ -1,9 +1,9 @@
 import { Server } from 'http';
-import express, {Express, Request, Response} from 'express';
+import express, { Express, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { App } from './types';
-import {registerRoutes} from "../../routes/routes-registry";
+import { registerRoutes } from '../../routes/routes-registry';
 
 export const createApp = async (): Promise<App> => {
     const app: Express = express();
@@ -12,7 +12,6 @@ export const createApp = async (): Promise<App> => {
     app.use(bodyParser.json());
 
     app.use(cors());
-
 
     app.get('/', (req: Request, res: Response) => {
         res.send('Express + TypeScript Server');

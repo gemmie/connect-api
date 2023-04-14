@@ -8,7 +8,7 @@ interface RevolutTransactionCounterparty {
     name: string;
 }
 
-export interface RevolutTransactionResponse {
+export interface RevolutTransaction {
     id: string;
     created_at: string;
     completed_at: string;
@@ -22,7 +22,7 @@ export interface RevolutTransactionResponse {
 interface MonzoTransactionMetadata {
     reference: string;
 }
-export interface MonzoTransactionResponse {
+export interface MonzoTransaction {
     id: string;
     created: string;
     description: string;
@@ -31,7 +31,7 @@ export interface MonzoTransactionResponse {
     metadata: MonzoTransactionMetadata;
 }
 
-export interface SterlingTransactionResponse {
+export interface SterlingTransaction {
     id: string;
     currency: string;
     amount: string;
@@ -40,10 +40,14 @@ export interface SterlingTransactionResponse {
     created: string;
     reference: string;
 }
+
+export type RevolutTransactionResponse = RevolutTransaction[];
+export type MonzoTransactionResponse = MonzoTransaction[];
+export type SterlingTransactionResponse = SterlingTransaction[];
 export interface BankEndpoint {
     name: string;
     transactionsResponse:
-        | RevolutTransactionResponse[]
-        | MonzoTransactionResponse[]
-        | SterlingTransactionResponse[];
+        | RevolutTransactionResponse
+        | MonzoTransactionResponse
+        | SterlingTransactionResponse;
 }

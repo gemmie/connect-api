@@ -1,4 +1,4 @@
-import {Server} from "http";
+import { Server } from 'http';
 
 export interface App {
     start: () => Server;
