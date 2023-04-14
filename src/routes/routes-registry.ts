@@ -5,10 +5,11 @@ import {
     Request,
     Express,
 } from 'express';
-import { transactionGetRoutes } from './transaction/get';
-import { Route } from './types';
 import { validationResult } from 'express-validator';
+import { transactionGetRoutes } from './transaction/get';
 import { errorHandler } from '../core/error/error-handler';
+import { ValidationError } from '../core/error/ValidationError';
+import { Route } from './types';
 
 export const registerRoutes = (app: Express) => {
     const transactionRoutes = [...transactionGetRoutes];
@@ -31,8 +32,7 @@ const validateRequest = (req: Request, res: Response, next: NextFunction) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-        // throw new ValidationError(JSON.stringify(errors.array()));
-        throw new Error(JSON.stringify(errors.array()));
+        throw new ValidationError(JSON.stringify(errors.array()));
     }
 
     return next();
