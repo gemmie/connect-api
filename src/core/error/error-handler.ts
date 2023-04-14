@@ -11,7 +11,5 @@ export const errorHandler: ErrorRequestHandler = (
         message: error.message || 'Something went wrong',
     };
 
-    console.log(errorBody);
-
     res.status(error.status || 500).json(errorBody);
 };

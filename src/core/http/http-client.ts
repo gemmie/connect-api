@@ -1,4 +1,6 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 
-export const httpClient = axios.create();
-export type HttpResponse<T> = AxiosResponse<T>;
+export const httpClient = axios.create({
+    timeout: 1000,
+    headers: { 'Content-Type': 'application/json' },
+});
