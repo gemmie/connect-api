@@ -5,7 +5,7 @@ import { AxiosResponse } from 'axios';
 export const getMonzoTransactions =
     async (): Promise<MonzoTransactionResponse> => {
         return await httpClient
-            .get('https://mock-api.com/api/revolut')
+            .get('https://mock-api.com/api/monzo')
             .then(
                 (response: AxiosResponse<MonzoTransactionResponse>) =>
                     response.data

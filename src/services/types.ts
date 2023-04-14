@@ -1,3 +1,9 @@
+export interface BankConfiguration {
+    name: string;
+    officialName: string;
+    unificationHandler: (officialName: string) => Promise<UnifiedTransaction[]>;
+}
+
 interface UnifiedTransactionAmount {
     value: string;
     currency: string;

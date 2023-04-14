@@ -1,42 +1,23 @@
-import { getSterlingTransactions } from '../core/bank-api/sterling';
-import { SterlingTransaction } from '../mock-bank-apis/types';
-import { UnifiedTransaction } from './types';
+import { unifySterlingTransactions } from './sterling-transaction-service';
+import { unifyRevolutTransactions } from './revolut-transaction-service';
+import { unifyMonzoTransactions } from './monzo-transaction-service';
+import { BankConfiguration } from './types';
 
-const unifySterlingSingleTransaction = (
-    officialName: string,
-    sterlingTransaction: SterlingTransaction
-): UnifiedTransaction => {
-    return {
-        id: sterlingTransaction.id,
-        created: sterlingTransaction.created,
-        description: sterlingTransaction.narrative,
-        amount: {
-            value: sterlingTransaction.amount,
-            currency: sterlingTransaction.currency,
-        },
-        type: sterlingTransaction.amount.startsWith('-') ? 'DEBIT' : 'CREDIT',
-        reference: sterlingTransaction.reference,
-        metadata: {
-            source: officialName,
-        },
-    };
-};
-
-const unifySterlingTransactions = async (
-    officialName: string
-): Promise<UnifiedTransaction[]> => {
-    const sterlingTransactions = await getSterlingTransactions();
-
-    return sterlingTransactions.map((transaction) =>
-        unifySterlingSingleTransaction(officialName, transaction)
-    );
-};
-
-const config = [
+const config: BankConfiguration[] = [
     {
         name: 'sterling',
         officialName: 'Sterling Bank',
-        handler: unifySterlingTransactions,
+        unificationHandler: unifySterlingTransactions,
+    },
+    {
+        name: 'revolut',
+        officialName: 'Revolut',
+        unificationHandler: unifyRevolutTransactions,
+    },
+    {
+        name: 'monzo',
+        officialName: 'Monzo',
+        unificationHandler: unifyMonzoTransactions,
     },
 ];
 
@@ -44,15 +25,15 @@ export const getUnifiedTransactions = async (source = '') => {
     const unifiedTransactionsByBank = await Promise.all(
         config
             .filter((bank) => (source ? bank.name === source : true))
-            .map(({ officialName, handler }) => handler(officialName))
+            .map(({ officialName, unificationHandler }) =>
+                unificationHandler(officialName)
+            )
     );
 
     const unifiedTransactions = unifiedTransactionsByBank.reduce(
         (transactions, acc) => [...acc, ...transactions],
         []
     );
-
-    console.log(unifiedTransactions);
 
     return unifiedTransactions;
 };
