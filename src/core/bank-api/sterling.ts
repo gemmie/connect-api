@@ -1,7 +1,7 @@
 import { httpClient } from '../http/http-client';
 import { SterlingTransactionResponse } from '../../mock-bank-apis/types';
-import { AxiosResponse } from 'axios';
 import { ExternalApiError } from '../error/ExternalApiError';
+import { AxiosResponse } from 'axios';
 
 export const getSterlingTransactions =
     async (): Promise<SterlingTransactionResponse> => {

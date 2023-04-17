@@ -1,7 +1,7 @@
+import { getMonzoTransactions } from '../core/bank-api/monzo';
+import { isDebitOrCredit } from './utlis';
 import { MonzoTransaction } from '../mock-bank-apis/types';
 import { UnifiedTransaction } from './types';
-import { isDebitOrCredit } from './utlis';
-import { getMonzoTransactions } from '../core/bank-api/monzo';
 
 const normalizeMonzoAmount = (amount: number) => {
     const normalizedAmountNumber = amount / 100;

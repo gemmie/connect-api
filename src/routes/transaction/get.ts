@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import { Route } from '../types';
-import { query } from 'express-validator';
 import { getUnifiedTransactions } from '../../services/transaction-service';
+import { query } from 'express-validator';
+import { Route } from '../types';
 
 const getTransactions = async (req: Request, res: Response) => {
     const source = (req.query.source as string) || '';

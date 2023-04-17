@@ -1,7 +1,7 @@
-import { UnifiedTransaction } from './types';
 import { getRevolutTransactions } from '../core/bank-api/revolut';
-import { RevolutTransaction } from '../mock-bank-apis/types';
 import { isDebitOrCredit, isStringifiedNumberNegative } from './utlis';
+import { RevolutTransaction } from '../mock-bank-apis/types';
+import { UnifiedTransaction } from './types';
 
 const unifyRevolutSingleTransaction = (
     officialName: string,

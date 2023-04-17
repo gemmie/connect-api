@@ -8,6 +8,17 @@ import nock from 'nock';
 let app: App;
 let server: Server;
 
+const checkIfNockIsDone = () => {
+    if (!nock.isDone()) {
+        const pendingMocks = nock.pendingMocks();
+
+        nock.cleanAll();
+
+        throw Error(
+            `Not all Nock HTTP mocks were used! Pending mocks: ${pendingMocks}`
+        );
+    }
+};
 describe('GET /transactions', () => {
     beforeAll(async () => {
         app = await createApp();
@@ -19,15 +30,7 @@ describe('GET /transactions', () => {
     });
 
     afterEach(() => {
-        if (!nock.isDone()) {
-            const pendingMocks = nock.pendingMocks();
-
-            nock.cleanAll();
-
-            throw Error(
-                `Not all Nock HTTP mocks were used! Pending mocks: ${pendingMocks}`
-            );
-        }
+        checkIfNockIsDone();
     });
 
     it('should transform transaction data to unified structure', async () => {

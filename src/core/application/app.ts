@@ -1,5 +1,5 @@
 import { Server } from 'http';
-import express, { Express, Request, Response } from 'express';
+import express, { Express } from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { App } from './types';

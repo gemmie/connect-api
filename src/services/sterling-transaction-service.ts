@@ -1,7 +1,7 @@
-import { SterlingTransaction } from '../mock-bank-apis/types';
-import { UnifiedTransaction } from './types';
 import { getSterlingTransactions } from '../core/bank-api/sterling';
 import { isDebitOrCredit } from './utlis';
+import { SterlingTransaction } from '../mock-bank-apis/types';
+import { UnifiedTransaction } from './types';
 
 const unifySterlingSingleTransaction = (
     officialName: string,
