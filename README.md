@@ -28,7 +28,7 @@ Tools used include:
       - `error` - error handling 
       - `http` - http client configuration 
   - `mock-bank-apis` - mocked external api endpoints (with nock)
-  - `routes` - routes registration and implemention along with tests 
+  - `routes` - routes registration and implementation along with tests
   - `services` - services for handling data transformation 
   - `index.ts` - entrypoint
 
