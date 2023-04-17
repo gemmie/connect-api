@@ -35,5 +35,5 @@ export const getUnifiedTransactions = async (source = '') => {
         []
     );
 
-    return unifiedTransactions;
+    return { transactions: unifiedTransactions };
 };
