@@ -1,9 +1,10 @@
 {
-    "name": "connect-task",
+    "name": "connect-api",
     "version": "1.0.0",
-    "description": "Recruitment task",
+    "description": "API to unify bank transaction data",
     "main": "index.js",
     "scripts": {
+        "start": "ts-node ./src/index.ts",
         "dev": "nodemon",
         "test": "jest",
         "snapshots:update": "jest -u",
