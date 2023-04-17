@@ -6,6 +6,7 @@
     "scripts": {
         "dev": "nodemon",
         "test": "jest",
+        "snapshots:update": "jest -u",
         "lint:check": "eslint --ext .ts .",
         "lint:fix": "eslint --fix --ext .ts .",
         "prettier:check": "prettier --check 'src/**/*.{ts,js,json}'",
