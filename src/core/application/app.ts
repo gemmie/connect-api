@@ -13,10 +13,6 @@ export const createApp = async (): Promise<App> => {
 
     app.use(cors());
 
-    app.get('/', (req: Request, res: Response) => {
-        res.send('Express + TypeScript Server');
-    });
-
     registerRoutes(app);
 
     const start = () => {
