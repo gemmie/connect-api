@@ -29,7 +29,9 @@ export const createApp = async (): Promise<App> => {
         return server;
     };
 
-    const stop = () => {};
+    const stop = () => {
+        server.close();
+    };
 
     return {
         start,

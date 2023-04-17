@@ -1,0 +1,557 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GET /transactions should return unified transaction data of bank specified in source query param 1`] = `
+[
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "78.99",
+    },
+    "created": "2022-03-21T14:16:32.000Z",
+    "description": "Payment from: John Doe",
+    "id": "tr_0987654321",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-0987654321",
+    "type": "CREDIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-12.50",
+    },
+    "created": "2022-03-21T14:16:32.000Z",
+    "description": "Payment to: Sarah Johnson",
+    "id": "tr_1357908642",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-1357908642",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-6.95",
+    },
+    "created": "2022-03-21T14:16:32.000Z",
+    "description": "Payment to: Michael Brown",
+    "id": "tr_2468013579",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-2468013579",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-45.67",
+    },
+    "created": "2022-03-21T14:16:32.000Z",
+    "description": "Payment to: Alexandra Lee",
+    "id": "tr_3692581470",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-3692581470",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "220.00",
+    },
+    "created": "2022-03-21T14:16:32.000Z",
+    "description": "Payment from: David Johnson",
+    "id": "tr_4710963528",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-4710963528",
+    "type": "CREDIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "120.00",
+    },
+    "created": "2022-03-23T10:30:20.000Z",
+    "description": "Payment from: John Doe",
+    "id": "tr_1234567901",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-0987654321",
+    "type": "CREDIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-68.50",
+    },
+    "created": "2022-03-23T12:05:10.000Z",
+    "description": "Payment to: Sarah Lee",
+    "id": "tr_1234567902",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-1122334455",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-10.00",
+    },
+    "created": "2022-03-24T16:10:02.000Z",
+    "description": "Payment to: David Lee",
+    "id": "tr_1234567903",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-9876543210",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "500.00",
+    },
+    "created": "2022-03-25T11:30:00.000Z",
+    "description": "Payment from: Lucas Brown",
+    "id": "tr_1234567904",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-4567891230",
+    "type": "CREDIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "20.00",
+    },
+    "created": "2022-03-26T14:40:30.000Z",
+    "description": "Payment from: Maria Hernandez",
+    "id": "tr_1234567905",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-7418529630",
+    "type": "CREDIT",
+  },
+]
+`;
+
+exports[`GET /transactions should transform transaction data to unified structure 1`] = `
+[
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-1200.00",
+    },
+    "created": "2023-04-05T09:12:00.000Z",
+    "description": "Monthly rent payment",
+    "id": "tx_00001YpBqNqL8mWnKf4t2Z",
+    "metadata": {
+      "source": "Monzo",
+    },
+    "reference": "SEPA-0987654321",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-95.00",
+    },
+    "created": "2023-04-04T14:30:00.000Z",
+    "description": "Electricity bill payment",
+    "id": "tx_00002EhXqVqJ4nWjKf4v5R",
+    "metadata": {
+      "source": "Monzo",
+    },
+    "reference": "SEPA-0987654322",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-87.60",
+    },
+    "created": "2023-04-03T11:20:00.000Z",
+    "description": "Supermarket purchase",
+    "id": "tx_00003DkVpHjP9oXnTf7s8Q",
+    "metadata": {
+      "source": "Monzo",
+    },
+    "reference": "SEPA-0987654323",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-39.90",
+    },
+    "created": "2023-04-02T16:40:00.000Z",
+    "description": "Internet service payment",
+    "id": "tx_00004TrWjKvL6dYmKg9t1F",
+    "metadata": {
+      "source": "Monzo",
+    },
+    "reference": "SEPA-0987654324",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "2100.00",
+    },
+    "created": "2023-04-01T08:00:00.000Z",
+    "description": "Salary deposit",
+    "id": "tx_00005TgGcNkU1mZnLf2s7D",
+    "metadata": {
+      "source": "Monzo",
+    },
+    "reference": "SEPA-0987654325",
+    "type": "CREDIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-50.00",
+    },
+    "created": "2022-12-31T23:59:00.000Z",
+    "description": "Charitable donation",
+    "id": "tx_00006FqMjDcX4yWmKv5r2S",
+    "metadata": {
+      "source": "Monzo",
+    },
+    "reference": "SEPA-0987654326",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-180.00",
+    },
+    "created": "2022-12-25T12:00:00.000Z",
+    "description": "Christmas gift purchase",
+    "id": "tx_00007QhRmGyZ9pLnVf1j6T",
+    "metadata": {
+      "source": "Monzo",
+    },
+    "reference": "SEPA-0987654327",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-78.00",
+    },
+    "created": "2022-12-20T19:00:00.000Z",
+    "description": "Restaurant bill payment",
+    "id": "tx_00008RpHcLmX6dGtKv9t4W",
+    "metadata": {
+      "source": "Monzo",
+    },
+    "reference": "SEPA-0987654328",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-215.00",
+    },
+    "created": "2022-12-15T10:30:00.000Z",
+    "description": "Car repair service payment",
+    "id": "tx_00009WsVnLqZ3mKpGf4y8D",
+    "metadata": {
+      "source": "Monzo",
+    },
+    "reference": "SEPA-0987654329",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "78.99",
+    },
+    "created": "2022-03-21T14:16:32.000Z",
+    "description": "Payment from: John Doe",
+    "id": "tr_0987654321",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-0987654321",
+    "type": "CREDIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-12.50",
+    },
+    "created": "2022-03-21T14:16:32.000Z",
+    "description": "Payment to: Sarah Johnson",
+    "id": "tr_1357908642",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-1357908642",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-6.95",
+    },
+    "created": "2022-03-21T14:16:32.000Z",
+    "description": "Payment to: Michael Brown",
+    "id": "tr_2468013579",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-2468013579",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-45.67",
+    },
+    "created": "2022-03-21T14:16:32.000Z",
+    "description": "Payment to: Alexandra Lee",
+    "id": "tr_3692581470",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-3692581470",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "220.00",
+    },
+    "created": "2022-03-21T14:16:32.000Z",
+    "description": "Payment from: David Johnson",
+    "id": "tr_4710963528",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-4710963528",
+    "type": "CREDIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "120.00",
+    },
+    "created": "2022-03-23T10:30:20.000Z",
+    "description": "Payment from: John Doe",
+    "id": "tr_1234567901",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-0987654321",
+    "type": "CREDIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-68.50",
+    },
+    "created": "2022-03-23T12:05:10.000Z",
+    "description": "Payment to: Sarah Lee",
+    "id": "tr_1234567902",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-1122334455",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-10.00",
+    },
+    "created": "2022-03-24T16:10:02.000Z",
+    "description": "Payment to: David Lee",
+    "id": "tr_1234567903",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-9876543210",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "500.00",
+    },
+    "created": "2022-03-25T11:30:00.000Z",
+    "description": "Payment from: Lucas Brown",
+    "id": "tr_1234567904",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-4567891230",
+    "type": "CREDIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "20.00",
+    },
+    "created": "2022-03-26T14:40:30.000Z",
+    "description": "Payment from: Maria Hernandez",
+    "id": "tr_1234567905",
+    "metadata": {
+      "source": "Revolut",
+    },
+    "reference": "SEPA-7418529630",
+    "type": "CREDIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-25.00",
+    },
+    "created": "2022-03-21T14:16:32.000Z",
+    "description": "Payment to Jane Smith",
+    "id": "6d4c34fc-94e7-4e52-8a36-9c40b102ecfc",
+    "metadata": {
+      "source": "Sterling Bank",
+    },
+    "reference": "SEPA-1234567890",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-100.00",
+    },
+    "created": "2023-04-04T09:12:00.000Z",
+    "description": "Monthly rent payment",
+    "id": "f1434237-ea1f-4cb7-a3d2-8e7c31b5455c",
+    "metadata": {
+      "source": "Sterling Bank",
+    },
+    "reference": "SEPA-1234567891",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-35.50",
+    },
+    "created": "2023-04-02T20:30:00.000Z",
+    "description": "Dinner with friends",
+    "id": "a4b4c3aa-6935-4ddc-85b5-5a5c2d935a1f",
+    "metadata": {
+      "source": "Sterling Bank",
+    },
+    "reference": "SEPA-1234567892",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-12.99",
+    },
+    "created": "2023-04-01T11:11:00.000Z",
+    "description": "Online shopping",
+    "id": "902f06f1-c3ce-42fc-b85c-b93b0fc0be9f",
+    "metadata": {
+      "source": "Sterling Bank",
+    },
+    "reference": "SEPA-1234567893",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "45.00",
+    },
+    "created": "2023-04-03T08:17:00.000Z",
+    "description": "Refund for returned item",
+    "id": "e90a5c5f-4e80-4d4f-a1f3-7e8825cf5fb5",
+    "metadata": {
+      "source": "Sterling Bank",
+    },
+    "reference": "SEPA-1234567894",
+    "type": "CREDIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-20.00",
+    },
+    "created": "2023-04-02T14:23:00.000Z",
+    "description": "Haircut",
+    "id": "bb6ab7c6-b903-4bdf-80e2-36eb2f14b8a8",
+    "metadata": {
+      "source": "Sterling Bank",
+    },
+    "reference": "SEPA-1234567895",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "500.00",
+    },
+    "created": "2023-04-01T13:47:00.000Z",
+    "description": "Salary payment",
+    "id": "45f8b15e-12c7-4411-8f47-f6c9a6eb22c6",
+    "metadata": {
+      "source": "Sterling Bank",
+    },
+    "reference": "SEPA-1234567896",
+    "type": "CREDIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-72.40",
+    },
+    "created": "2023-04-04T10:05:00.000Z",
+    "description": "Grocery shopping",
+    "id": "7a2b8a67-b7aa-4e50-a833-0e5bcf8b17a6",
+    "metadata": {
+      "source": "Sterling Bank",
+    },
+    "reference": "SEPA-1234567897",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-15.00",
+    },
+    "created": "2023-04-01T08:55:00.000Z",
+    "description": "Public transportation fare",
+    "id": "e2d3dd0d-3f36-4339-8e16-3fb3ee59c342",
+    "metadata": {
+      "source": "Sterling Bank",
+    },
+    "reference": "SEPA-1234567898",
+    "type": "DEBIT",
+  },
+  {
+    "amount": {
+      "currency": "EUR",
+      "value": "-120.00",
+    },
+    "created": "2023-04-03T17:30:00.000Z",
+    "description": "Gym membership fee",
+    "id": "2f1a86d9-9717-4a33-af3e-858cbb1265f5",
+    "metadata": {
+      "source": "Sterling Bank",
+    },
+    "reference": "SEPA-1234567899",
+    "type": "DEBIT",
+  },
+]
+`;

@@ -9,11 +9,24 @@ const bankEndpoints: BankEndpoint[] = [
     { name: 'monzo', transactionsResponse: monzoTransactions },
     { name: 'sterling', transactionsResponse: sterlingTransactions },
 ];
-export const mockBankApi = () => {
+export const mockBankApiPersist = () => {
     bankEndpoints.forEach(({ name, transactionsResponse }) => {
         nock('https://mock-api.com')
             .persist()
             .get(`/api/${name}`)
             .reply(200, transactionsResponse);
     });
+};
+export const mockBankApi = () => {
+    bankEndpoints.forEach(({ name, transactionsResponse }) => {
+        nock('https://mock-api.com')
+            .get(`/api/${name}`)
+            .reply(200, transactionsResponse);
+    });
+};
+
+export const mockRevolutApi = () => {
+    nock('https://mock-api.com')
+        .get(`/api/revolut`)
+        .reply(200, revolutTransactions);
 };
